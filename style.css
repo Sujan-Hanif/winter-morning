@@ -10,13 +10,13 @@ html {
 
 /* Main body styling*/
 body {
-    background-position: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-    text-align: center;
-    font-size: 2rem;
-    border-bottom: 1px solid black;
+    padding-top: 1rem;
+    color: white;
+
 }
 
 .navbar {
@@ -85,4 +85,8 @@ a {
 .footer {
     height: 200px;
     background-color: bisque;
+}
+
+p {
+    text-align: center;
 }
