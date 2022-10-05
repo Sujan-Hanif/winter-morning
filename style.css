@@ -17,10 +17,14 @@ body {
 h1 {
     color: white;
     font-size: 1.5rem;
-
+    order: 1;
 }
 
-.header {
+.site-header__burger-menu {
+    order: 2;
+}
+
+.site-header {
     position: fixed;
     display: flex;
     align-items: center;
@@ -63,10 +67,11 @@ h1 {
 }
 
 .navbar {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    /* justify-content: space-between; */
     flex-direction: column;
 
 }
@@ -84,19 +89,27 @@ h1 {
     border-radius: 50%;
 }
 
-.header li a {
-    text-decoration: none;
-    padding: 8px 50px 8px 50px;
-    display: block;
-    color: white;
-    border: 1px solid #999;
-    border-radius: 10px;
+.log {
+    order: 0;
 }
 
 
 
+.site-header li a {
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 50px 8px 50px;
+    /* padding: 0.5rem; */
+    display: block;
+    color: white;
+    border: 1px solid #999;
+    border-radius: 15px;
+}
+
+
 .navbar a:hover {
     background-color: rgb(30, 32, 27);
+
 }
 
 .product-search {
@@ -135,20 +148,36 @@ h1 {
     margin-top: 60px;
 }
 
+/* .product-container__item:hover {
+    transform: rotate(90deg);
+    transition: 2s;
+
+} */
+
 .product-container__item {
     padding-bottom: 2rem;
 
 }
 
-
+/* All pictures items in the body  */
 .product-container__item img {
     background-color: #ccc;
     padding: 1rem;
     border: 1px outset #999;
-    transition: all 0.2s;
+    /* transition: all 1s; */
     height: 200px;
     width: 300px;
     /* margin: calc(10%/6); */
+}
+
+.product-container__item img:hover {
+    background-color: gray;
+    /* transform: translate(-10px, -10px); */
+    /* box-shadow: 10px 10px #22222299; */
+}
+
+.product-container__item:hover {
+    transform: scale(1.1, 1.1);
 }
 
 
@@ -161,31 +190,50 @@ p {
     text-align: center;
 }
 
-/* For Desktop Site */
+/* Responsive screen size For Desktop Site */
 @media screen and (min-width: 700px) {
-    body {
-        background-color: whitesmoke;
+    .nav {
+        position: static;
+        display: flex;
+        transform: translateX(0);
+        order: 2;
+        margin-right: 1rem;
     }
 
-    .header {
+    .site-header li a {
+        border: none;
+        border-radius: 0;
+        /* padding: 1rem; */
+        padding: 0px 10px;
+        /* display: block; */
+
+    }
+
+
+    .site-header {
+        display: flex;
         justify-content: space-between;
     }
 
-    .logo {
-        order: 1;
+    .navbar {
+        display: flex;
+        flex-direction: row;
+
     }
 
-    .header__burger-menu {
-        order: 3;
-        margin-right: 10px;
+    .logo {
+        order: 0;
+    }
+
+    .site-header__burger-menu {
+        display: none;
     }
 
     h1 {
         /* Float: right; why it does not work??? because display: flex; */
         /*  text-align: center; same reason */
         font-size: 3rem;
-        order: 2;
-        /*    order: 1; */
+        order: 1;
     }
 
     .product-container {
@@ -201,5 +249,10 @@ p {
     .search-hide {
         display: block;
     }
+
+    .product-search {
+        margin-top: 50px;
+    }
+
 
 }
