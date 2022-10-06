@@ -64,7 +64,8 @@ h1 {
 
 /* Serch option will disappear to show the menu */
 .search-hide {
-    display: none;
+    /* display: none; */
+    opacity: 0;
 }
 
 .navbar {
@@ -114,7 +115,7 @@ h1 {
 }
 
 .product-search {
-    position: fixed;
+    position: static;
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-left: 2rem;
